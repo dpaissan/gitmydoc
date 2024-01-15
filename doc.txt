@@ -24,13 +24,15 @@ Merge:
     5. ... close VS ...
     6. git commit
           
-    Sovrascrivere il file con quello in locale (alla fine fare add per confermare la fine del merge):
-      git checkout --ours [nomefile]
+    Overwrite the file with the local version:
+      git checkout --ours [file-name]
+      git add [file-name]     # ⚠️⚠️TO VERIFY⚠️⚠️
           
-    Sovrascrivere il file con quello in remoto (alla fine fare add per confermare la fine del merge):
-      git checkout --theirs [nomefile]
+    Overwrite the file with the remote version:
+      git checkout --theirs [file-name]
+      git add [file-name]     # ⚠️⚠️TO VERIFY⚠️⚠️
           
-    Annullare il merge se niente e' stato committato:
+    Abort the merge phase if nothing has been committed:
       git merge --abort
 
 Move uncommitted changes:
