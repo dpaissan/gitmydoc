@@ -1,18 +1,12 @@
-Doc path: C:\Users\[username]\.gitconfig
-
-  
 Diff:
   git diff origin/master master
-
 
 Restore a file:
   git co -- [file-name]
 
-
 Create a new branch:
   git co -b [branch-name]
   git push origin [branch-name]
-
 
 Tag:
   git add -A
@@ -20,7 +14,6 @@ Tag:
   git push origin [branch-name]
   git tag -a 1.10.1 -m "Version 1.10.1"
   git push origin [branch-name] --follow-tags
-
 
 Merge:
   Resolve conflicts in a file:
@@ -30,41 +23,35 @@ Merge:
     4. ... save the file in VS ...
     5. ... close VS ...
     6. git commit
-            
           
     Sovrascrivere il file con quello in locale (alla fine fare add per confermare la fine del merge):
       git checkout --ours [nomefile]
-
           
     Sovrascrivere il file con quello in remoto (alla fine fare add per confermare la fine del merge):
       git checkout --theirs [nomefile]
-
           
     Annullare il merge se niente e' stato committato:
       git merge --abort
-
 
 Move uncommitted changes:
   1. git stash
   2. ... move to another branch ...
   3. git stash pop
 
-
 Delete stash:
   git stash drop
-
           
 Show all remote brances:
-        git branch -r
-
+  git branch -r
           
 Edit unpushed commit message:
   git commit --amend
-
     
 Force-overwrite remote release branch with local release branch:
   git push origin +release:release
-
     
 Prevent merge to create '.orig' backup files:
   git config --global mergetool.keepBackup false
+
+.gitconfig path:
+    C:\Users\[username]\.gitconfig
