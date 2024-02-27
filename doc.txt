@@ -51,9 +51,22 @@ Edit unpushed commit message:
     
 Force-overwrite remote release branch with local release branch:
   git push origin +release:release
-    
+
+Move branch to a specific commit:
+  git reset --hard <commit-id>
+  git push --force origin <branch>
+
+Move tag to a specific commit:
+  git tag -d <tagname>                    # delete the old tag locally
+  git push origin :refs/tags/<tagname>    # delete the old tag remotely
+  git tag <tagname> <commit-id>
+  git push origin <tagname>
+
 Prevent merge to create '.orig' backup files:
   git config --global mergetool.keepBackup false
 
 .gitconfig path:
-    C:\Users\[username]\.gitconfig
+  C:\Users\[username]\.gitconfig
+
+Link of the doc:
+  https://github.com/dpaissan/gitmydoc/blob/main/doc.txt
