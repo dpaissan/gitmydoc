@@ -65,6 +65,9 @@ Move tag to a specific commit:
 Prevent merge to create '.orig' backup files:
   git config --global mergetool.keepBackup false
 
+Remove untracketd files:
+  git clean -f -d  # -f: files -d: directories
+
 .gitconfig path:
   C:\Users\[username]\.gitconfig
 
