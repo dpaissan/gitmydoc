@@ -1,75 +1,85 @@
 Diff:
-  git diff origin/master master
+    git diff origin/master master
+
 
 Restore a file:
-  git co -- [file-name]
+    git co -- [file-name]
 
-Create a new branch:
-  git co -b [branch-name]
-  git push origin [branch-name]
 
-Tag:
-  git add -A
-  git commit -am "bla bla"
-  git push origin [branch-name]
-  git tag -a v1.20.3 -m "Version 1.20.3"
-  git push origin v1.20.3
+Tags:
+    Add new tag:
+        ... add, commit & push ...
+        git tag -a v1.20.3 -m "Version 1.20.3"
+        git push origin v1.20.3
+
+    Move tag to a specific commit:
+        git tag -d <tagname>                    # delete the old tag locally
+        git push origin :refs/tags/<tagname>    # delete the old tag remotely
+        git tag <tagname> <commit-id>
+        git push origin <tagname>
+
 
 Merge:
-  Resolve conflicts in a file:
-    1. git mergetool [nomefile]
-    2. ... VS starts ...
-    3. ... change the file in VS ...
-    4. ... save the file in VS ...
-    5. ... close VS ...
-    6. git commit
+    List all files with conflicts:
+        git diff --name-only --diff-filter=U --relative
+
+    Resolve conflicts in a file:
+        1. git mergetool [nomefile]
+        2. ... VS starts ...
+        3. ... change the file in VS ...
+        4. ... save the file in VS ...
+        5. ... close VS ...
+        6. git commit
           
     Overwrite the file with the local version:
-      git checkout --ours [file-name]
-      git add [file-name]     # ⚠️⚠️TO VERIFY⚠️⚠️
+        git checkout --ours [file-name]
+        git add [file-name]     # ⚠️⚠️TO VERIFY⚠️⚠️
           
     Overwrite the file with the remote version:
-      git checkout --theirs [file-name]
-      git add [file-name]     # ⚠️⚠️TO VERIFY⚠️⚠️
+        git checkout --theirs [file-name]
+        git add [file-name]     # ⚠️⚠️TO VERIFY⚠️⚠️
           
     Abort the merge phase if nothing has been committed:
-      git merge --abort
+        git merge --abort
 
-Move uncommitted changes:
-  1. git stash
-  2. ... move to another branch ...
-  3. git stash pop
+    Prevent merge to create '.orig' backup files:
+        git config --global mergetool.keepBackup false
 
-Delete stash:
-  git stash drop
-          
-Show all remote brances:
-  git branch -r
-          
+
+Stash:
+    Move uncommitted changes:
+        1. git stash
+        2. ... move to another branch ...
+        3. git stash pop
+
+    Delete stash:
+        git stash drop
+
+
+Branches:
+    Create a new branch:
+        git co -b [branch-name]
+        git push origin [branch-name]
+
+    Show all remote brances:
+        git branch -r
+
+    Force-overwrite remote release branch with local release branch:
+        git push origin +release:release
+
+    Move branch to a specific commit:
+        git reset --hard <commit-id>
+        git push --force origin <branch>
+
+
 Edit unpushed commit message:
-  git commit --amend
+    git commit --amend
     
-Force-overwrite remote release branch with local release branch:
-  git push origin +release:release
-
-Move branch to a specific commit:
-  git reset --hard <commit-id>
-  git push --force origin <branch>
-
-Move tag to a specific commit:
-  git tag -d <tagname>                    # delete the old tag locally
-  git push origin :refs/tags/<tagname>    # delete the old tag remotely
-  git tag <tagname> <commit-id>
-  git push origin <tagname>
-
-Prevent merge to create '.orig' backup files:
-  git config --global mergetool.keepBackup false
-
 Remove untracketd files:
-  git clean -f -d  # -f: files -d: directories
+    git clean -f -d          # -f: files -d: directories
 
 .gitconfig path:
-  C:\Users\[username]\.gitconfig
+    C:\Users\[username]\.gitconfig
 
 Link of the doc:
-  https://github.com/dpaissan/gitmydoc/blob/main/doc.txt
+    https://github.com/dpaissan/gitmydoc/blob/main/doc.txt
