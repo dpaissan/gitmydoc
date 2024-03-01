@@ -4,7 +4,6 @@
 
 [alias]
         ls = ls-files
-		    pushh = push -u origin HEAD
         co = checkout
         ci = commit
         st = status
