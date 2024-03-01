@@ -21,7 +21,7 @@ Tags:
 
 Merge:
     List all files with conflicts:
-        git diff --name-only --diff-filter=U --relative
+        git ls-merge
 
     Resolve conflicts in a file:
         1. git mergetool [nomefile]
