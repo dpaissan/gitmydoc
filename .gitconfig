@@ -14,7 +14,7 @@
         type = cat-file -t
         dump = cat-file -p
         ls-merge = diff --name-only --diff-filter=U --relative
-	doc = "! curl -s https://raw.githubusercontent.com/dpaissan/gitmydoc/main/doc.txt?v=$RANDOM"
+        doc = "! curl -s https://raw.githubusercontent.com/dpaissan/gitmydoc/main/doc.txt?v=$RANDOM"
 
 [color]
         ui = true
