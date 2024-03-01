@@ -1,0 +1,38 @@
+[user]
+        name = dpaissan
+        email = dpaissan@dpaissan.it
+
+[alias]
+        ls = ls-files
+		    pushh = push -u origin HEAD
+        co = checkout
+        ci = commit
+        st = status
+        br = branch
+        lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+        lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+        lg = !git lg1 >&2
+        type = cat-file -t
+        dump = cat-file -p
+        ls-merge = diff --name-only --diff-filter=U --relative
+		    doc = "! curl -s https://raw.githubusercontent.com/dpaissan/gitmydoc/main/doc.txt?v=$RANDOM"
+
+[color]
+        ui = true
+
+[push]
+        default = simple
+
+[core]
+	      askPass = 
+
+[merge]
+        tool = vsdiffmerge
+
+[mergetool]
+        prompt = false
+
+[mergetool "vsdiffmerge"]
+        cmd = '"C:/Program Files/Microsoft Visual Studio/2022/Enterprise/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/vsdiffmerge.exe"' "$REMOTE" "$LOCAL" "$BASE" "$MERGED" //m
+        keepbackup = false
+        trustexitcode = true
