@@ -26,24 +26,25 @@ Merge:
     Resolve conflicts in a file:
         1. git mergetool [nomefile]
         2. ... VS starts ...
-        3. ... change the file in VS ...
+        3. ... change the file in VS ...  # -> 💩💩💩 if VS could not make a 3 way merge, see below. 💩💩💩
         4. ... save the file in VS ...
         5. ... close VS ...
         6. git commit
-          
+
+    What if VS could not make a 3 way merge of a file?
+        1. edit the file manually
+        2. git add [file-name]     # to mark the file as merged
+
     Overwrite the file with the local version:
         git checkout --ours [file-name]
-        git add [file-name]     # ⚠️⚠️TO VERIFY⚠️⚠️
+        git add [file-name]     # 🚨🚨TO VERIFY🚨🚨
           
     Overwrite the file with the remote version:
         git checkout --theirs [file-name]
-        git add [file-name]     # ⚠️⚠️TO VERIFY⚠️⚠️
+        git add [file-name]     # 🚨🚨TO VERIFY🚨🚨
           
     Abort the merge phase if nothing has been committed:
         git merge --abort
-
-    Prevent merge to create '.orig' backup files:
-        git config --global mergetool.keepBackup false
 
 
 Stash:
