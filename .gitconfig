@@ -24,7 +24,7 @@
         default = simple
 
 [core]
-	      askPass = 
+        askPass = 
 
 [merge]
         tool = vsdiffmerge
