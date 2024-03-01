@@ -75,7 +75,7 @@ Branches:
 Edit unpushed commit message:
     git commit --amend
     
-Remove untracketd files:
+Delete untracketd files:
     git clean -f -d          # -f: files -d: directories
 
 .gitconfig path:
