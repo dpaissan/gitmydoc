@@ -69,8 +69,11 @@ Branches:
         git push origin +release:release
 
     Move branch to a specific commit:
-        git reset --hard <commit-id>
-        git push --force origin <branch>
+        git reset --hard [commit-id]
+        git push --force origin [branch-name]
+
+    Delete local branch:
+        git branch -d [branch-name]
 
 
 Edit unpushed commit message:
