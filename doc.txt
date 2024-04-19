@@ -25,6 +25,10 @@ Tags:
         git tag <tagname> <commit-id>
         git push origin <tagname>
 
+    Delete tag:
+        git tag -d <tagname>                    # delete the old tag locally
+        git push origin :refs/tags/<tagname>    # delete the old tag remotely
+
 
 Merge:
     List all files with conflicts:
