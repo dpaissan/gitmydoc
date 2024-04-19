@@ -16,7 +16,7 @@ Files:
 Tags:
     Add new tag:
         ... add, commit & push ...
-        git tag -a v1.20.3 -m "Version 1.20.3"
+        git tag -a v1.20.3 -m "v1.20.3"
         git push origin v1.20.3
 
     Move tag to a specific commit:
