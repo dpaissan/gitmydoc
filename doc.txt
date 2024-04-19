@@ -2,8 +2,15 @@ Diff:
     git diff origin/master master
 
 
-Restore a file:
-    git co -- [file-name]
+Files:
+    Show tracked files:
+        git ls-files
+
+    Restore a file:
+        git co -- [file-name]
+
+    Delete untracked files:
+        git clean -f -d          # -f: files -d: directories
 
 
 Tags:
@@ -76,11 +83,15 @@ Branches:
         git branch -d [branch-name]
 
 
-Edit unpushed commit message:
-    git commit --amend
-    
-Delete untracketd files:
-    git clean -f -d          # -f: files -d: directories
+Commits:
+    Edit unpushed commit message:
+        git commit --amend
+
+    Delete already pushed commit:
+        1. Controllare con git status che le tue local changes non ci sono: tutte le uncommitted changes vengono buttate!
+        2. git reset --hard <SOME-COMMIT>
+        3. git push --force origin <branch>
+
 
 .gitconfig path:
     C:\Users\[username]\.gitconfig
