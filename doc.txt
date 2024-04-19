@@ -88,7 +88,7 @@ Commits:
         git commit --amend
 
     Delete already pushed commit:
-        1. Controllare con git status che le tue local changes non ci sono: tutte le uncommitted changes vengono buttate!
+        1. Run 'git status' and check that there are no uncommitted changes: all uncommitted changes will deleted!
         2. git reset --hard <SOME-COMMIT>
         3. git push --force origin <branch>
 
