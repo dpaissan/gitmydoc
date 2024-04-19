@@ -7,7 +7,7 @@ Files:
         git ls-files
 
     Restore a file:
-        git co -- [file-name]
+        git co -- <file-name>
 
     Delete untracked files:
         git clean -f -d          # -f: files -d: directories
@@ -20,14 +20,14 @@ Tags:
         git push origin v1.20.3
 
     Move tag to a specific commit:
-        git tag -d <tagname>                    # delete the old tag locally
-        git push origin :refs/tags/<tagname>    # delete the old tag remotely
-        git tag <tagname> <commit-id>
-        git push origin <tagname>
+        git tag -d <tag-name>                    # delete the old tag locally
+        git push origin :refs/tags/<tag-name>    # delete the old tag remotely
+        git tag <tag-name> <commit-id>
+        git push origin <tag-name>
 
     Delete tag:
-        git tag -d <tagname>                    # delete the old tag locally
-        git push origin :refs/tags/<tagname>    # delete the old tag remotely
+        git tag -d <tag-name>                    # delete the old tag locally
+        git push origin :refs/tags/<tag-name>    # delete the old tag remotely
 
 
 Merge:
@@ -35,7 +35,7 @@ Merge:
         git ls-merge
 
     Resolve conflicts in a file:
-        1. git mergetool [nomefile]
+        1. git mergetool <file-name>
         2. ... VS starts ...
         3. ... change the file in VS ...     # 💩💩💩 See below if VS cannot make a 3 way merge 💩💩💩
         4. ... save the file in VS ...
@@ -44,15 +44,15 @@ Merge:
 
     What if VS could not make a 3 way merge of a file?
         1. edit the file manually
-        2. git add [file-name]     # to mark the file as merged
+        2. git add <file-name>     # to mark the file as merged
 
     Overwrite the file with the local version:
-        git checkout --ours [file-name]
-        git add [file-name]     # 🚨🚨TO VERIFY🚨🚨
+        git checkout --ours <file-name>
+        git add <file-name>     # 🚨🚨TO VERIFY🚨🚨
           
     Overwrite the file with the remote version:
-        git checkout --theirs [file-name]
-        git add [file-name]     # 🚨🚨TO VERIFY🚨🚨
+        git checkout --theirs <file-name>
+        git add <file-name>     # 🚨🚨TO VERIFY🚨🚨
           
     Abort the merge phase if nothing has been committed:
         git merge --abort
@@ -70,8 +70,8 @@ Stash:
 
 Branches:
     Create a new branch:
-        git co -b [branch-name]
-        git push origin [branch-name]
+        git co -b <branch-name>
+        git push origin <branch-name>
 
     Show all remote brances:
         git branch -r
@@ -80,22 +80,26 @@ Branches:
         git push origin +release:release
 
     Move branch to a specific commit:
-        git reset --hard [commit-id]
-        git push --force origin [branch-name]
+        git reset --hard <commit-id>
+        git push --force origin <branch-name>
 
     Delete local branch:
-        git branch -d [branch-name]
+        git branch -d <branch-name>
 
 
 Commits:
     Edit unpushed commit message:
         git commit --amend
 
+    Edit last pushed commit message:
+        git commit --amend
+        git push --force-with-lease origin <branch-name>
+    
     Delete already pushed commit:
-        # 🚨🚨WARNING🚨🚨: make a copy of the commit that you want to delete if you want to preserve its content!!
+        # 🚨🚨WARNING🚨🚨: make a copy (in some way, I didn't investigate how to do it) of the commit that you want to delete if you want to preserve its content!!
         git status    # check that there are no uncommitted changes: all uncommitted changes will deleted!
-        git reset --hard <SOME-COMMIT>
-        git push --force origin <branch>
+        git reset --hard <commit-id>
+        git push --force origin <branch-name>
 
 
 .gitconfig path:
