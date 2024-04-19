@@ -92,6 +92,7 @@ Commits:
         git commit --amend
 
     Delete already pushed commit:
+        # 🚨🚨WARNING🚨🚨: make a copy of the commit that you want to delete if you want to preserve its content!!
         git status    # check that there are no uncommitted changes: all uncommitted changes will deleted!
         git reset --hard <SOME-COMMIT>
         git push --force origin <branch>
