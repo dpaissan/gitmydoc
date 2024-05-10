@@ -9,9 +9,13 @@ Files:
     Restore a file:
         git co -- <file-name>
 
-    Delete untracked files:
-        git clean -f -d          # -f: files -d: directories
+    Restore all files:
+        git co -- .
 
+    Delete untracked files:
+        git clean -fd          # WARNING: it will delete files from IGNORED folders too.
+        [or]
+        git glean -fdx         # WARNING: like above but it will delete also IGNORED files
 
 Tags:
     Add new tag:
