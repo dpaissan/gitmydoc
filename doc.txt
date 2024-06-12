@@ -1,5 +1,9 @@
 Diff:
-    git diff origin/master master
+    diff between two branches:
+        git diff origin/master master
+
+    diff between two non-git folders:
+        git diff --no-index <folder1> <folder2>
 
 
 Files:
