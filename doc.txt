@@ -10,6 +10,9 @@ Files:
     Show tracked files:
         git ls-files
 
+    Remove a file from the repository:
+        git rm --cached <file-name>
+
     Restore a file:
         git co -- <file-name>
 
