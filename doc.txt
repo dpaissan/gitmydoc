@@ -19,10 +19,10 @@ Files:
     Restore all files:
         git co -- .
 
-    Delete untracked files:
-        git clean -fd          # WARNING: it will delete files from IGNORED folders too.
+    Delete untracked files and directories:
+        git clean -fd
         [or]
-        git glean -fdx         # WARNING: like above but it will delete also IGNORED files
+        git glean -fdx         # WARNING: like above but it will delete also untracked IGNORED files and directories
 
 
 Tags:
