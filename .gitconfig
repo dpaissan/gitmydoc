@@ -15,6 +15,7 @@
         dump = cat-file -p
         ls-merge = diff --name-only --diff-filter=U --relative
         doc = "! curl -s https://raw.githubusercontent.com/dpaissan/gitmydoc/main/doc.txt?v=$RANDOM"
+        tg = "!f() { git tag -a \"$1\" -m \"$1\"; }; f"
 
 [color]
         ui = true
